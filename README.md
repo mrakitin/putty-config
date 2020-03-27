@@ -67,6 +67,8 @@ If you want to forward some specific ports from the remote workstation, the foll
 
 ![ws-connection-ssh-tunnels](images/ws-connection-ssh-tunnels.png)
 
+See a more thorough explanation here: https://blog.devolutions.net/2017/04/how-to-configure-an-ssh-tunnel-on-putty.
+
 
 ## Summary:
 
