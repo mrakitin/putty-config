@@ -13,23 +13,28 @@ This step is needed to allow password-less access of the machines. The steps can
 ### First hop: BNL ssh gateway
 
 Create a new session to connect to `ssh.bnl.gov`:
+
 ![bnl-session](images/bnl-session.png)
 
 **The following 2 steps are needed for all connections explained below.**
 
 In the "Connection" -> "Data" menu enter your username:
+
 ![bnl-connection-data](images/bnl-connection-data.png)
 
 Enter the path to the private (`.ppk`) key file, generated on the first step:
+
 ![bnl-connection-ssh-auth](images/bnl-connection-ssh-auth.png)
 
 
 ### Second hop: NSLS-II ssh gateway
 
 Create a new session (by copying the existing one):
+
 ![nsls2-session](images/nsls2-session.png)
 
 Configure proxy parameters to use the previously defined BNL ssh gateway (`ssh.bnl.gov`) as a proxy:
+
 ![nsls2-connection-proxy](images/nsls2-connection-proxy.png)
 
 The following command is entered into the "local proxy command" field:
@@ -38,23 +43,30 @@ plink.exe %user@%proxyhost -P %proxyport -nc %host:%port
 ```
 See https://stackoverflow.com/questions/28926612/putty-configuration-equivalent-to-openssh-proxycommand for details.
 
+
 ### Workstation on the NSLS-II experimental floor
 
 Create a new session (by copying the existing one):
+
 ![ws-session](images/ws-session.png)
 
 Optionally configure the X11-forwarding:
+
 ![ws-connection-ssh-x11](images/ws-connection-ssh-x11.png)
 
 This requires installation and starting of https://sourceforge.net/projects/vcxsrv on the Windows machine.
 
 Configure proxy parameters to use the previously defined NSLS-II ssh gateway (`ssh.nsls2.bnl.gov`) as a proxy:
+
 ![ws-connection-proxy](images/ws-connection-proxy.png)
+
 
 ## Tunneling ports
 
 If you want to forward some specific ports from the remote workstation, the following configuration will do the trick:
+
 ![ws-connection-ssh-tunnels](images/ws-connection-ssh-tunnels.png)
+
 
 ## Summary:
 
